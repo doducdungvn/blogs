@@ -1,0 +1,17 @@
+---
+const { frontmatter } = Astro.props;
+---
+<html>
+  <head>
+    <title>{frontmatter.title}</title>
+    <meta name="description" content={frontmatter.excerpt} />
+  </head>
+  <body>
+    <article style="max-width: 600px; margin: auto; padding: 2rem;">
+      <h1>{frontmatter.title}</h1>
+      <p><em>{frontmatter.date}</em></p>
+      {frontmatter.cover_image && <img src={frontmatter.cover_image} alt="cover" style="max-width: 100%;" />}
+      <slot />
+    </article>
+  </body>
+</html>
