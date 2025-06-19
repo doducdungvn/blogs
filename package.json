@@ -1,4 +1,6 @@
 {
+  "name": "astro-decap-blog",
+  "type": "module",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -8,6 +10,7 @@
     "astro": "^4.0.0"
   },
   "devDependencies": {
-    "@astrojs/mdx": "^3.0.0"
-}
+    "@astrojs/mdx": "^3.0.0",
+    "@astrojs/content": "^1.0.0"
+  }
 }
