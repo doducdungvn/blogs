@@ -2,8 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
 
 permissions:
   contents: read
@@ -23,9 +22,9 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm install  # Changed from npm ci to avoid error when package-lock.json is missing
+        run: npm install
 
-      - name: Build with Astro
+      - name: Build site
         run: npm run build
 
       - name: Upload artifact
