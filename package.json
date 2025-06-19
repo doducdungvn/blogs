@@ -8,7 +8,6 @@
     "astro": "^4.0.0"
   },
   "devDependencies": {
-  "@astrojs/content": "^1.0.0",
-  "@astrojs/mdx": "^3.0.0"
+    "@astrojs/mdx": "^3.0.0"
 }
 }
