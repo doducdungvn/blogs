@@ -9,6 +9,6 @@
   },
   "devDependencies": {
     "@astrojs/mdx": "^3.0.0",
-    "@astrojs/content": "^1.0.0"
+    "@astrojs/content": "^2.5.0"
   }
 }
