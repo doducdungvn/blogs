@@ -1,26 +1,16 @@
 ---
-import { getCollection } from "astro:content";
-
+import fs from "fs";
+import path from "path";
+import { Markdown } from "astro/components";
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
-  return posts.map(post => ({
-    params: { slug: post.slug },
-    props: { post }
+  const files = fs.readdirSync("./content/blog");
+  return files.map(file => ({
+    params: { slug: file.replace(".md", "") }
   }));
 }
-
-const { post } = Astro.props;
+const { slug } = Astro.params;
+const post = await import(`../../../content/blog/${slug}.md`);
 ---
 
-<html>
-  <head>
-    <title>{post.data.title}</title>
-  </head>
-  <body>
-    <article>
-      <h1>{post.data.title}</h1>
-      <p><em>{post.data.date}</em></p>
-      <div innerHTML={post.body} />
-    </article>
-  </body>
-</html>
+<h1>{post.frontmatter.title}</h1>
+<Markdown>{post.default}</Markdown>
